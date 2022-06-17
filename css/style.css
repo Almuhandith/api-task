@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-family: 'Dancing Script', cursive;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+.hero-section {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hero-section .text-section {
+    position: relative
+}
+
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: .8;
+    background: linear-gradient(45deg, #f200ff 0%, #ffba42 100%);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
