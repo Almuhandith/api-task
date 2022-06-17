@@ -40,7 +40,7 @@ function createPost(e) {
         .then((response) => response.json())
         .then((data) => {
             console.log(data)
-            postBox.unshift(data);
+            postBox.unshift(data);            
             console.log(postBox)
             let postHolder = '';
             postBox.forEach(post => {
