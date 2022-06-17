@@ -146,8 +146,10 @@ function renderUI (arr) {
                 postHolder += `
                 <div class="col-md-12 mb-3">
                 <div class="card h-100 shadow" style="background: linear-gradient(45deg, #f200ff 0%, #ffba42 100%);">
-                    <div class="card-body">
+                    <div class = "card-header">
                         <p>${post.id}</p>
+                    </div>
+                    <div class="card-body">
                         <h6 class = "fw-bolder" id="post-title">${post.title}</h6>
                         <p id="post-body">${post.body}</p>
                         <div class="d-flex justify-content-between">
