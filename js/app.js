@@ -11,7 +11,6 @@ function getPosts() {
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then((response) => response.json())
         .then((data) => {
-            console.log(postBox)
             postBox = data
             renderUI(postBox)
         })
@@ -39,7 +38,6 @@ function createPost(e) {
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data)
             postBox.unshift(data);            
             console.log(postBox)
             let postHolder = '';
@@ -49,6 +47,9 @@ function createPost(e) {
                     <div class="card h-100 shadow" style="background: linear-gradient(45deg, #f200ff 0%, #ffba42 100%);">
                         <div class = "card-header">
                             <p>${post.id}</p>
+                        </div>
+                        <div class "card-img">
+                            <img src= "img/blog image.jpeg">
                         </div>
                         <div class="card-body">    
                             <h6 class = "fw-bolder" id="post-title">${post.title}</h6>
@@ -72,8 +73,6 @@ function createPost(e) {
 }
 
 function updatePost(id) {
-    console.log(id)
-
     fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
@@ -89,10 +88,9 @@ function updatePost(id) {
         .then((response) => response.json())
         .then((data) => {
 
-            console.log(data)
             let postTitles = document.querySelectorAll('.post-title')
             let postBodies = document.querySelectorAll('.post-body')
-            console.log(postTitles)
+            
             postTitles.forEach((postTitle, index) => {
                 if (index + 1 === id) {
                     if (data.title !== "") {
@@ -120,7 +118,7 @@ function openView(id) {
     fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
         .then((response) => response.json())
         .then((data) => {
-            console.log(data)
+            
             localStorage.setItem('viewedPost', JSON.stringify(data))
             window.location.href = 'view.html'
         });
@@ -132,9 +130,8 @@ function deletePost(id) {
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data)
+            
             postBox = postBox.filter(post => post.id !== id)
-            console.log(postBox)
             renderUI(postBox)  
         })
 
@@ -144,8 +141,9 @@ function renderUI (arr) {
     let postHolder = '';
             arr.forEach(post => {
                 postHolder += `
-                <div class="col-md-12 mb-3">
+                <div class="col-md-6 mb-3">
                 <div class="card h-100 shadow" style="background: linear-gradient(45deg, #f200ff 0%, #ffba42 100%);">
+                    <img src= "img/blog image.jpeg" class= "card-img-top">
                     <div class = "card-header">
                         <p>${post.id}</p>
                     </div>

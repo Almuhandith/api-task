@@ -9,4 +9,4 @@ function renderView() {
     document.getElementById('post-body').innerHTML = post.body
 }
 
-renderSingle();
+renderView();
