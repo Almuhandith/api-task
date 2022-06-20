@@ -43,13 +43,11 @@ function createPost(e) {
             let postHolder = '';
             postBox.forEach(post => {
                 postHolder += `
-                <div class="col-md-12 mb-3">
+                <div class="col-md-6 mb-3">
                     <div class="card h-100 shadow" style="background: linear-gradient(45deg, #f200ff 0%, #ffba42 100%);">
+                        <img src= "img/blog image.jpeg" class= "card-img-top">
                         <div class = "card-header">
                             <p>${post.id}</p>
-                        </div>
-                        <div class "card-img">
-                            <img src= "img/blog image.jpeg">
                         </div>
                         <div class="card-body">    
                             <h6 class = "fw-bolder" id="post-title">${post.title}</h6>
